@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>React 组件语法</title>
+	<script type="text/javascript" src="react.js"></script>
+	<script type="text/javascript" src="react-dom.js"></script>
+	<script type="text/javascript" src="babel.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<!-- React 规定，自定义组件的第一个字母必须大写，比如 MyTitle 不能写成 mytitle，以便与内置的原生类相区分 -->
+	<script type="text/babel">
+		
+		class MyTitle extends React.Component{
+			render(){
+				return <h1>Hello World</h1>;
+			};
+		};
+		ReactDOM.render(
+			<MyTitle/>,
+			document.getElementById('example')
+		);
+	</script>
+</body>
+</html>
