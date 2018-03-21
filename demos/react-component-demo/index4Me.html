@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>React 组件实战</title>
+	<script type="text/javascript" src="react.js"></script>
+	<script type="text/javascript" src="react-dom.js"></script>
+	<script type="text/javascript" src="babel.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		class MyTitle extends React.Component{
+
+			constructor(...args){
+				super(...args);
+				this.state = {
+					content:"Hello World"
+				};
+			};
+
+			clickChange(e){
+				this.setState({
+					content:"Hello Clicked"
+				});
+			};
+
+			render(){
+				return <div onClick={this.clickChange.bind(this)}>
+					{this.state.content}
+				</div>;
+			};
+		}
+
+		ReactDOM.render(
+			<MyTitle />,
+			document.getElementById('example')
+		);
+	</script>
+</body>
+</html>
