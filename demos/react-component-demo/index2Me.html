@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>React 组件的参数</title>
+	<script type="text/javascript" src="react.js"></script>
+	<script type="text/javascript" src="react-dom.js"></script>
+	<script type="text/javascript" src="babel.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+		class MyTitle extends React.Component {
+			render() {
+				return <h1 style={{color: this.props.color;}}></h1>;
+			}
+		};
+
+		ReaactDOM.render(
+			<MyTitle color="red"/>,
+			document.getElementById('example')
+		);
+	</script>
+</body>
+</html>
