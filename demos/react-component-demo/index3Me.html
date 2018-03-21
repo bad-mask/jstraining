@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>React 组件的状态</title>
+	<script type="text/javascript" src="react.js"></script>
+	<script type="text/javascript" src="react-dom.js"></script>
+	<script type="text/javascript" src="babel.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+	class MyTitle extends React.Component{
+		constructor(...args){
+			super(...args);
+			this.state = {
+				name:'访问者'
+			};
+		};
+
+		handleChange(e){
+			let name = e.target.value;
+			this.setState({
+				name:name
+			});
+		};
+
+		render(){
+			return <div>
+				<input type="text" onChange={this.handleChange.bind(this)}/>
+				<p>你好，{this.state.name}</p>
+			</div>;
+		};
+	}
+
+	ReactDOM.render(
+		<MyTitle/>,
+		document.getElementById('example')
+	);
+	</script>
+</body>
+</html>
