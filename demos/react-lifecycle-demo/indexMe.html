@@ -46,9 +46,16 @@
 				}else if(this.state.error !== null){
 					return <span>Error: {this.state.error}</span>;
 				}else{
+					var projects = this.state.data.items;
+					var results = [];
+					projects.forEach(p => {
+						var item = <li>{p.name}</li>;
+						results.push(item);
+					});
 					return (
 						<div>
 							<p>API 数据获取成功</p>
+							<ul>{results}</ul>
 						</div>
 					);
 				}
